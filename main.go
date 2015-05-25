@@ -15,7 +15,7 @@ var initType, label string
 var incrementParts [4]bool
 
 func init() {
-	flag.StringVar(&initType, "init", "", "Initialse the VERSION file. Valid values: semver, 4part.")
+	flag.StringVar(&initType, "init", "", "Initialise the VERSION file. Valid values: semver, 4part.")
 	flag.BoolVar(&incrementParts[version.Major], "major", false, "Increment the major version")
 	flag.BoolVar(&incrementParts[version.Minor], "minor", false, "Increment the major version")
 	flag.BoolVar(&incrementParts[version.Patch], "patch", false, "Increment the major version")
@@ -29,7 +29,7 @@ func main() {
 	validateFlags()
 
 	if initType != "" {
-		intialiseVersion()
+		initialiseVersion()
 		return
 	}
 
@@ -65,7 +65,7 @@ func validateFlags() {
 	}
 }
 
-func intialiseVersion() {
+func initialiseVersion() {
 	var v *version.Version
 	switch initType {
 	case "semver":
